@@ -59,6 +59,7 @@
 	 <header>
 		<h3>A JavaScript project by Colton Elstrom</h3>
 		<h3 id="greeting" >Greeting goes here</h3>
+		<h3 id="daytoday">Current day goes here</h3>
 	</header>
 	 <p>This web page is a demonstration of how JavaScript can be used to help websites be more interactive and dynamic.</p>
 	 <p>By using JavaScript, we are able to write instructions for how we want this page to work, at certain times of the day, the background color will change as well as the greeting on the top of the page.</p>
@@ -105,6 +106,10 @@
 	
 	*/
 	
+	const weekday = ["Today is Sunday","Today is Monday","Today is Tuesday","Today is Wednesday","Today is Thursday","Today is Friday","Today is Saturday"];
+
+	const d = new Date();
+	let day = weekday[d.getDay()];
 	
 	let myDate = new Date(); 
 	let myCopyRight = myDate.getFullYear();
@@ -148,6 +153,7 @@
 	document.getElementById("greeting").innerHTML = myGreeting;
 	document.querySelector("html").style.backgroundColor = myColor;
 	document.getElementById("pic").src = myPic;
+	document.getElementById("daytoday").innerHTML = day;
 	
 	//https://tinyurl.com/dynamic-html-checker
     document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
